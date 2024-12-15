@@ -8,23 +8,31 @@
 </head>
 
 <body>
-    <div class="main-content">
     {{>header}}
 
-    <p>Use this site to get your weather!</p>
+        <div class="main-content">
+             <p>Use this site to get your weather!</p>
 
-    <form>
-            <input placeholder = "location">
-            <button> Search</button>
+             <form id="weather-form">
+                 <input class="input-field" placeholder="Enter Location" type="text" name="location">
 
-    </form>
+                <div class ="temp-unit">
+                    <label><input type ="radio" name = "temperatureUnit" value = "Celsius"> Celsius</label>
+                    <label><input type ="radio" name = "temperatureUnit" value = "Fahrenheit">Fahrenheit</label>
+                </div>
 
-    <p id="message-1"></p>
-    <p id="message-2"></p>
-</div>
+                <button type="submit"> Search</button>
+            </form>
+
+            <div id="result"></div>
+
+             <p id="message-1"></p>
+            <p id="message-2"></p>
+        </div>
+
     {{>footer}}
 
-
-    <script>src="/js/app.js"</script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>

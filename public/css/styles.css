@@ -1,57 +1,132 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
 body {
-    color: #333333; 
-    font-family: arial; 
-    max-width: 650px; 
-    margin: 0 auto; 
-    padding: 0 16px; 
-
-    display:flex; 
-    flex-direction: column; 
-    min-height:100vw; 
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light background for contrast */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
 }
 
+/* Main Content Styles */
 .main-content {
-    flex-grow: 1; 
+    flex: 1; /* This allows the main content to grow and take up available space */
+    padding: 20px;
+    text-align: center;
 }
 
-footer {
-    color: #888888; 
-    border-top: 1px soilid #eeeeee; 
-    margin-top: 16px; 
-    padding: 16px 0; 
-}
-
+/* Header Styles */
 header {
-    margin-top: 16px; 
-    margin-bottom: 48px; 
+    background-color: #ff69b4; /* Pink color */
+    color: white; /* White text */
+    padding: 20px;
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
 }
 
-h1{
-    font-size: 64px; 
-    margin-bottom: 16px; 
-    color: hotpink;
-
+/* Navbar Styles */
+nav ul {
+    list-style: none; 
+    display: flex;
+    justify-content: center; 
+    margin: 0; 
+    padding: 0;
 }
 
-header a {
-    color: #888888; 
-    margin-right: 16px; 
-    text-decoration: none;
+nav ul li {
+    margin: 0 15px; 
 }
 
-.portrait {
-    width: 250px; 
+nav ul li a {
+    text-decoration: none; 
+    color: white; 
+    font-weight: bold; 
+    transition: color 0.3s; 
 }
 
-input {
-        border: 1px solid #cccccc; 
-        padding: 8px; 
+nav ul li a:hover {
+    color: #ff1493; 
 }
 
+/* Form Styles */
+form {
+    margin: 20px auto; 
+    max-width: 400px;
+    padding: 20px;
+    background-color: #f9f9f9; 
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    font-family: 'Arial', sans-serif;
+}
+
+/* Text Input Field */
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Temperature Unit Radio Buttons */
+.temp-unit {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.temp-unit input[type="radio"] {
+    margin-right: 8px;
+}
+
+/* Submit Button */
 button {
-    cursor: pointer; 
-    border: 1px solid #888888; 
-    background: #888888; 
-    padding: 8px; 
+    padding: 10px 20px;
+    background-color: #ff69b4; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    width: 100%; 
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
+button:hover {
+    background-color: #ff1493; /* Darker pink on hover */
+}
+
+/* Result Box */
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    display: none; /* Initially hidden */
+}
+
+/* Messages */
+.message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #777;
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #ff69b4; /* Pink color */
+    color: white; /* White text */
+    padding: 20px;
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+}

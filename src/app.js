@@ -23,7 +23,7 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req,res) => {
     res.render('index', {
         title: 'Weather', 
-        name: 'Morgan'
+        name: 'Morgan Moncur'
     })
 })
 
@@ -36,7 +36,7 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        helpText: 'Helping You out I suppose',
+        helpText: 'Helping you out I suppose',
         title: 'Help',
         name: 'Morgan Moncur'
     })
@@ -49,12 +49,15 @@ app.get('/weather', (req, res) => {
         })
 }
 
-geocode(req.query.adress, (error, {latitude, longitude, location} = {}) => {
+//default selection for temp unit
+const unit = req.query.unit || 'Fahrenheit'
+
+geocode(req.query.address, (error, {latitude, longitude, location} = {}) => {
     if(error) {
         return res.send({error})
     }
 
-    forecast(latitude, longitude, (error, forecastData) => {
+    forecast(latitude, longitude, unit,  (error, forecastData) => {
         if (error) {
             return res.send({ error})
         }
@@ -75,7 +78,6 @@ app.get('/products', (req, res) => {
                 error: 'You must provide a search term'
             })
     }
-    req.query.search
     res.send({
         products: []
     })
